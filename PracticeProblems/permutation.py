@@ -16,5 +16,5 @@ def permutation(strInput):
     
     return listPermutations
 
-permutations = permutation("abc")
+permutations = permutation("abcd")
 print(permutations)
