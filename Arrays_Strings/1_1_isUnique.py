@@ -33,3 +33,27 @@ print(isUnique2("aiehba")) #False
 print(isUnique2("abcdefghijk")) #True
 print(isUnique2("aa")) #False
 print(isUnique2("a")) #True
+
+#returns int number of char ('a' returns 0, 'b' returns 1...) 
+def getIntOfChar(c):
+    return ord(c) - ord('a')
+
+#O(n) computation O(1) space creating a bool array of length 128 where a[i] is True
+# if i-character appears
+def isUnique3(s):
+    char_set = [False for i in range(128)]
+
+    for char in s:
+        i = getIntOfChar(char) 
+        if char_set[i]:
+            return False
+
+        char_set[i] = True
+
+    return True
+
+print("\nisUnique3()")
+print(isUnique2("aiehba")) #False
+print(isUnique2("abcdefghijk")) #True
+print(isUnique2("aa")) #False
+print(isUnique2("a")) #True
