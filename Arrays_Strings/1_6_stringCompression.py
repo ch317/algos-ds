@@ -32,3 +32,33 @@ def compress(s):
 print(compress("aabcccccaaa")) #a2b1c5a3
 print(compress("abcdefggg")) #a1b1c1d1e1f1g3
 print(compress("abcdef")) #abcdef (doesnt need compression)
+
+#Same exercise instead of concatenating sCompressed, just appending to the list
+def compress2(s):
+
+    lastChar = s[0]
+    countLastChar = 1
+    sCompressed = []
+    needsCompression = False
+
+    for i in range(1, len(s)):
+        if s[i] == lastChar:
+            needsCompression = True
+            countLastChar += 1
+        else:
+            sCompressed.append(lastChar + str(countLastChar))
+            lastChar = s[i]
+            countLastChar = 1
+    
+    #Last element
+    sCompressed.append(lastChar + str(countLastChar))
+
+    sCompressed1 = ""
+    if needsCompression:
+        return sCompressed1.join(sCompressed)
+    
+    return s
+
+print(compress2("aabcccccaaa")) #a2b1c5a3
+print(compress2("abcdefggg")) #a1b1c1d1e1f1g3
+print(compress2("abcdef")) #abcdef (doesnt need compression)
