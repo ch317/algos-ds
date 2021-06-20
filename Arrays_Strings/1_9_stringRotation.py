@@ -13,7 +13,7 @@ def stringRotation(s1, s2):
         return False
 
     s2Concatenated = s2 + s2
-    return s1 in s2Concatenated
+    return isSubstring(s2Concatenated, s1)
 
 
 # Tests
