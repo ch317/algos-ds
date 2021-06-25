@@ -16,13 +16,16 @@ def reverseList(list):
     lastNodeReversedList.next = None
     return list
 
+if __name__ == "__main__":
+   # stuff only to run when not called via 'import' here
+   #Tests
+    list = LinkedList() #1->5->7->9
+    list.add(Node(1))
+    list.add(Node(5))
+    list.add(Node(7))
+    list.add(Node(9))
 
-#Tests
-list = LinkedList() #1->5->7->9
-list.add(Node(1))
-list.add(Node(5))
-list.add(Node(7))
-list.add(Node(9))
+    reversedList = reverseList(list)
+    reversedList.printList() #9->7->5->1()
 
-reversedList = reverseList(list)
-reversedList.printList() #9->7->5->1
+
