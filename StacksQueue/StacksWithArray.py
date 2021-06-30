@@ -50,6 +50,38 @@ def push(stackNumber, value):
         else:
             raise IndexError
 
+#Pops the last number in the stack
+def pop(stackNumber):
+    if stackNumber not in [1, 2, 3]:
+        raise ValueError
+    
+    if stackNumber == 1:
+        global top1Idx
+        if top1Idx < 0: #Empty stack
+            raise IndexError
+
+        tmp = stacks[top1Idx]
+        stacks[top1Idx] = 0
+        top1Idx -= 1
+
+    elif stackNumber == 2:
+        global top2Idx
+        if top2Idx < s2Start: #Empty stack
+            raise IndexError
+
+        tmp = stacks[top2Idx]
+        stacks[top2Idx] = 0
+        top2Idx -= 1
+    
+    elif stackNumber == 3:
+        global top3Idx
+        if top3Idx < s3Start: #Empty stack
+            raise IndexError
+
+        tmp = stacks[top3Idx]
+        stacks[top3Idx] = 0
+        top3Idx -= 1
+
 print("Empty stacks: ")
 print(stacks)
 
@@ -75,4 +107,9 @@ print(stacks)
 
 #Testing exceptions
 #push(4, 10) #Value Error
-push(2, 2.5) #Type Error
+#push(2, 2.5) #Type Error
+pop(1)
+pop(2)
+pop(3)
+pop(3) #Should give index error since stack 3 is empty now
+print(stacks)
