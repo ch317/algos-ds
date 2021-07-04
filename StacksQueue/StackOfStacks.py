@@ -55,9 +55,13 @@ def testStackOfStacks():
     stackOfStacks.push(node4)
     stackOfStacks.push(node5)
     stackOfStacks.push(node6)
-
     stackOfStacks.print()
 
+    stackOfStacks.pop() #Now we only have 1 stack with 5 elements
+    stackOfStacks.print()
+
+    stackOfStacks.pop() #1 stack with 4 elements
+    stackOfStacks.print()
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
