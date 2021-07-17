@@ -54,7 +54,6 @@ def depthFirstSearch1(root):
 
 def breadthFirstSearch1(root):
     print("Breadth first search:")
-    root = createSampleTree()
     q1 = queue.Queue()
     q1.put(root)
     while q1.qsize() != 0:
