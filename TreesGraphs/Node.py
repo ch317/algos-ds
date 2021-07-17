@@ -6,7 +6,7 @@ class Node:
         self.children = []
     
     def __str__(self):
-        return self.data
+        return str(self.data)
     
     def addChild(self, node):
         self.children.append(node)
